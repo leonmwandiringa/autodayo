@@ -1,16 +1,18 @@
-const app = require('express')();
+//const app = require('express')();
 const path = require('path');
 const fs = require('fs');
 const mongoose = require('mongoose');
 let User = require('./App/Models/User');
-const request = require('request-promise');
-const cheerio = require('cheerio');
+/*const request = require('request-promise');
+const cheerio = require('cheerio');*/
 const CoreController = require("./App/Controllers/CoreController");
 
 
 //mongoose.connect('mongodb://autodayo:Kaboombro1/@ds147180.mlab.com:47180/autodayo');
 
 (()=>{
+
+
     //call em
     CoreController.startApp();
 

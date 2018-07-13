@@ -4,18 +4,16 @@
  * @return global control
  * @comment singularity baby
  */
-const RL = require('readline');
+let rL = require('readline');
 let { Greetings } = require("../Helpers");
-RL.createInterface(process.stdin, process.stdout);
+const RL = rL.createInterface(process.stdin, process.stdout);
 
 let RealestOuchea = null;
+let roles = ['SIMPLE JOE', 'SAIYAN MODE', 'GOD MODE'];
  class CoreController{
 
-    constructor(name, mode = 'jack'){
-        this.name = name;
+    constructor(mode = 'SIMPLE JOE'){
         this.mode = mode;
-        this.AppClosal();
-        this.roles = ['jack', 'real nigga'];
     }
 
     //starter
@@ -30,53 +28,20 @@ let RealestOuchea = null;
 
         if(indexed){
 
-            process.stdout.write('Enter Your name bro\n\r');
-            process.stdin.setEncoding('utf8');
+            RealestOuchea = RealestOuchea == null ? new CoreController(namecr.toString().trim(), roles[1]) : RealestOuchea; 
+            RealestOuchea.startAutodayo();
 
-            process.stdin.on('data', (data)=>{
-
-                RealestOuchea = RealestOuchea == null ? new CoreController(name.toString().trim(), this.roles[1]) : RealestOuchea; 
-                
-            });
-            
 
         }else{
-            process.stdout.write("You aint gon get shhh cuz\n\r");
+
             RealestOuchea = new CoreController('douche bag');
             process.exit('newbie');
+
         }
        
 
     }
 
-    static runNextQues(){
-        process.stdin.on('data', function(data){
-            console.log(data);
-            var name = data.toString().toUpperCase().trim();
-
-            process.stdout.write(`whats the magic word ${name}`);
-
-            /*process.on('data', (data)=>{
-
-                let mode = data.split(" ").map((val)=>{
-                    return String(val.trim().toUpperCase);
-                });
-
-                if(mode.indeOf(this.roles[1]) != -1){
-
-                    let greetingsLength = Greetings.length;
-                    console.log(greetingsLength);
-                    RealestOuchea = RealestOuchea == null ? new CoreController(name, this.roles[1]) : RealestOuchea;                        
-
-                }else{
-
-                    RealestOuchea = RealestOuchea == null ? new CoreController(name, this.roles[0]) : RealestOuchea;  
-
-                }
-
-            })*/
-        });
-    }
     //closing command
     AppClosal(){
 
@@ -94,16 +59,13 @@ let RealestOuchea = null;
 
     async startAutodayo(){
 
-        
-        console.log("you are ");
-
-        /*
-        RL.question('its your boy autodayo ouchea', (response)=>{
+        RL.question(Greetings[Math.floor(Math.random()*Greetings.length)]+' its your boy autodayo ouchea\n\r', (response)=>{
 
             let crREsponse = response;
+            console.log("\n\r"+crREsponse);
 
 
-        });*/
+        });
 
 
     }
