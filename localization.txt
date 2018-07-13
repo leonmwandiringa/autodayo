@@ -1,0 +1,141 @@
+EN-AU:{
+clear filter: CLEAR FILTERS
+},
+EN-NZ:{
+clear filter: CLEAR FILTERS
+},
+DE-CH:{
+clear filter: FILTER AUFHEBEN
+},
+DA-DK:{
+clear filter: RYD FILTRE
+},
+NL-NL:{
+clear filter: FILTERS WISSEN
+},
+EN-GB:{
+clear filter: CLEAR FILTERS
+},
+SK-SK:{
+clear filter: VYMAZAŤ FILTRE
+},
+NB-NO:{
+clear filter: FJERN FILTRE
+},
+HU-HU:{
+clear filter: SZŰRŐK TÖRLÉSE
+},
+NL-BE:{
+clear filter: FILTERS WISSEN
+},
+CS-CZ:{
+clear filter: ODSTRANIT FILTRY
+},
+DE-AT:{
+clear filter: FILTER AUFHEBEN
+},
+PT-PT:{
+clear filter: LIMPAR FILTROS
+},
+EN-ZA:{
+clear filter: CLEAR FILTERS
+},
+DE-DE:{
+clear filter: FILTER AUFHEBEN
+},
+ES-ES:{
+clear filter: BORRAR FILTROS
+},
+PL-PL:{
+clear filter: WYCZYŚĆ FILTRY
+},
+ES-AR:{
+clear filter: BORRAR FILTROS
+},
+FR-BE:{
+clear filter: EFFACER LES FILTRES
+},
+FI-FI:{
+clear filter: POISTA SUODATTIMET
+},
+PT-BR:{
+clear filter: LIMPAR FILTROS
+},
+FR-FR:{
+clear filter: EFFACER LES FILTRES
+},
+ES-CO:{
+clear filter: BORRAR FILTROS
+},
+ES-MX:{
+clear filter: BORRAR FILTROS
+},
+FR-CA:{
+clear filter: EFFACER LES FILTRES
+},
+EL-GR:{
+clear filter: ΑΠΑΛΟΙΦΗ ΦΙΛΤΡΩΝ
+},
+EN-CA:{
+clear filter: CLEAR FILTERS
+},
+JA-JP:{
+clear filter: フィルターのクリア
+},
+FR-CH:{
+clear filter: EFFACER LES FILTRES
+},
+ZH-TW:{
+clear filter: 清除篩選器
+},
+TR-TR:{
+clear filter: FİLTRELERİ TEMİZLEYİN
+},
+EN-IN:{
+clear filter: CLEAR FILTERS
+},
+AR-SA:{
+clear filter: CLEAR FILTERS
+},
+RU-RU:{
+clear filter: ОЧИСТИТЬ ФИЛЬТРЫ
+},
+IT-IT:{
+clear filter: CANCELLA FILTRI
+},
+EN-SG:{
+clear filter: CLEAR FILTERS
+},
+EN-HK:{
+clear filter: CLEAR FILTERS
+},
+HE-IL:{
+clear filter: CLEAR FILTERS
+},
+SV-SE:{
+clear filter: RENSA FILTER
+},
+EN-US:{
+clear filter: CLEAR FILTERS
+},
+AR-AE:{
+clear filter: CLEAR FILTERS
+},
+ZH-CN:{
+clear filter: 
+},
+ZH-HK:{
+clear filter: 清除篩選器
+},
+EN-AE:{
+clear filter: CLEAR FILTERS
+},
+ES-CL:{
+clear filter: BORRAR FILTROS
+},
+KO-KR:{
+clear filter: 필터 제거
+},
+EN-IE:{
+clear filter: CLEAR FILTERS
+},
