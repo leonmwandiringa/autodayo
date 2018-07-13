@@ -8,7 +8,7 @@ const cheerio = require('cheerio');
 const CoreController = require("./App/Controllers/CoreController");
 
 
-mongoose.connect('mongodb://autodayo:Kagloombloom3d/@ds147180.mlab.com:47180/autodayo');
+//mongoose.connect('mongodb://autodayo:Kaboombro1/@ds147180.mlab.com:47180/autodayo');
 
 (()=>{
     //call em
