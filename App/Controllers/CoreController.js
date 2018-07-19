@@ -8,12 +8,37 @@ let rL = require('readline');
 let { Greetings } = require("../Helpers");
 const RL = rL.createInterface(process.stdin, process.stdout);
 
+const projectId = 'autodayo-c177f';
+const sessionId = '20761ae55a113309d034e38e97b94147e663087f';
+const query = 'hello';
+const languageCode = 'en-US';
+
+// Instantiate a DialogFlow client.
+const dialogflow = require('dialogflow');
+const sessionClient = new dialogflow.SessionsClient();
+ 
+// Define session path
+const sessionPath = sessionClient.sessionPath(projectId, sessionId);
+
+const request = {
+    session: sessionPath,
+    queryInput: {
+      text: {
+        text: query,
+        languageCode: languageCode,
+      },
+    },
+  };
+
 let RealestOuchea = null;
-let roles = ['SIMPLE JOE', 'SAIYAN MODE', 'GOD MODE'];
+let roles = ['SIMPLE-JOE', 'SAIYAN-MODE', 'GOD-MODE'];
  class CoreController{
 
-    constructor(mode = 'SIMPLE JOE'){
+    constructor(mode){
         this.mode = mode;
+        this.username;
+
+
     }
 
     //starter
@@ -26,15 +51,17 @@ let roles = ['SIMPLE JOE', 'SAIYAN MODE', 'GOD MODE'];
         let commandflag = process.argv.indexOf('--init') != -1 ? true : false;
         let indexed = commandflag && process.argv.indexOf("autodayo") != -1? true : false;
 
+        let mode = process.argv.indexOf('--mode') != -1 && process.argv[process.argv.indexOf('--mode')+1] != undefined ? process.argv[process.argv.indexOf('--mode')+1].toString().toUpperCase().trim() : 'SIMPLE-JOE';
+
         if(indexed){
 
-            RealestOuchea = RealestOuchea == null ? new CoreController(namecr.toString().trim(), roles[1]) : RealestOuchea; 
+            RealestOuchea = RealestOuchea == null ? new CoreController(mode) : RealestOuchea; 
             RealestOuchea.startAutodayo();
 
 
         }else{
 
-            RealestOuchea = new CoreController('douche bag');
+            RealestOuchea = new CoreController('SIMPLE-JOE');
             process.exit('newbie');
 
         }
@@ -59,11 +86,37 @@ let roles = ['SIMPLE JOE', 'SAIYAN MODE', 'GOD MODE'];
 
     async startAutodayo(){
 
-        RL.question(Greetings[Math.floor(Math.random()*Greetings.length)]+' its your boy autodayo ouchea\n\r', (response)=>{
+        RL.question('\n\r----'+this.mode+'-------\n\r'+Greetings[Math.floor(Math.random()*Greetings.length)]+',\n\r enter your username cuz\n\r', (response)=>{
 
-            let crREsponse = response;
-            console.log("\n\r"+crREsponse);
+            this.username = response.toString().trim();
+            
+            console.log(`Wasap ${this.username}`+'\n\r ?' );
 
+            RL.on('line', (response)=>{
+
+                let crREsponse = response;
+
+                sessionClient
+                .detectIntent(request)
+                .then(responses => {
+                    console.log('Detected intent');
+                    const result = responses[0].queryResult;
+                    console.log(`  Query: ${result.queryText}`);
+                    console.log(`  Response: ${result.fulfillmentText}`);
+                    if (result.intent) {
+                    console.log(`  Intent: ${result.intent.displayName}`);
+                    } else {
+                    console.log(`  No intent matched.`);
+                    }
+                })
+                .catch(err => {
+                    console.error('ERROR:', err);
+                });
+                
+                RL.setPrompt(`Wasap ${this.username}`+'\n\r');
+                RL.prompt();
+
+            });
 
         });
 

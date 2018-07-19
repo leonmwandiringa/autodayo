@@ -12,7 +12,6 @@ const CoreController = require("./App/Controllers/CoreController");
 
 (()=>{
 
-
     //call em
     CoreController.startApp();
 
